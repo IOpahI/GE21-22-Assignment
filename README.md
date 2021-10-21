@@ -12,14 +12,14 @@ The idea for this project is to create a representation of a visually pleasing a
 
 Visual Aspects
 
--Frequency-line responding to the music along the horizon
--Car and Camera bobbing responding to bass level
+- Frequency-line responding to the music along the horizon
+- Car and Camera bobbing responding to bass level
 
 
 Interactive Aspects
 
--Camera movement, to the left and right
--A button/key to change song
+- Camera movement, to the left and right
+- A button/key to change song
 
 # Instructions for use
 
