@@ -25,7 +25,7 @@ Interactive Aspects
 
 # How it works
 
-# List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
+# List of classes/assets with sources
 
 | Class/asset | Source |
 |-----------|-----------|
