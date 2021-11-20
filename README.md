@@ -8,7 +8,7 @@ Class Group: Game Design
 
 # Description of the project
 
-The idea for this project is to create a representation of a visually pleasing and inspiring car-ride along a city street. The street will be procedurally generated, with birds and leaves flying along/past the screen. 
+The idea for this project is to create a representation of a visually pleasing car-ride along a city street in a low-rider. The street will be procedurally generated, with birds and leaves flying along/past the screen. 
 
 Visual Aspects
 
