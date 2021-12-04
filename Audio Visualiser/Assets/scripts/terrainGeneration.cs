@@ -14,22 +14,30 @@ public class terrainGeneration : MonoBehaviour
     public float scale = 20f;
     public float xOffset = 100f;
     public float yOffset = 100f;
-
+    public float speed = 2.5f;
+    //AudioSource audioSource;
+    //private float[] audioSpec;
 
     void Start()
     {
+        /*
+        audioSpec = new float[128];
+        audioSource = GetComponent<AudioSource>();
+        */
         xOffset = Random.Range(0f, 9999f);                  //offsets in order to randomize the map when launching and adding a movement effect
         yOffset = Random.Range(0f, 9999f);
     }
 
     void Update()
     {
-        
+        //audioSource.GetSpectrumData(audioSpec, 0, FFTWindow.Hamming);
 
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData); //taking value form the below terrain data that is being generated and passing into the current terrain
 
-        yOffset += Time.deltaTime * 2.5f;                           //adding the "movement effect" of the project
+        yOffset += Time.deltaTime * speed;                      //adding the "movement effect" of the project
+
+        
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
@@ -62,4 +70,13 @@ public class terrainGeneration : MonoBehaviour
         return Mathf.PerlinNoise(xCoordinate, yCoordiante);         //using perlin noise for pseudo-random generation
     }
 
+    public void Scaling (float newScale)
+    {
+        scale = newScale;
+    }
+
+    public void SpeedChange (float newSpeed)
+    {
+        speed = newSpeed;
+    }
 }
