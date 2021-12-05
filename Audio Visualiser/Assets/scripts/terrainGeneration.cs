@@ -14,7 +14,7 @@ public class terrainGeneration : MonoBehaviour
     public float scale = 20f;
     public float xOffset = 100f;
     public float yOffset = 100f;
-    public float speed = 2.5f;
+    public static float speed = 2.5f;
     //AudioSource audioSource;
     //private float[] audioSpec;
 
