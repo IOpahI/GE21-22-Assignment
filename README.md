@@ -10,7 +10,7 @@ Class Group: Game Design
 
 The idea for this project is to create a representation of a vaporwave style of audio visualisation. This will include RGB, neon textures, and a procedural terrain, as well as a number of different songs. In addition there will be bright particles to fill the screen to ensure that the project doesnt feel too empty.
 
-[Watch the Project](https://youtu.be/EgTOUdCkO38)
+[Watch the Project here](https://youtu.be/EgTOUdCkO38)
 
 Visual Aspects
 
