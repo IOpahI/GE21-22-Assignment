@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackSunMode : MonoBehaviour
 {
 
-   
+    //declaring materials to switch then when swapping colour modes
 
     public Material normalSun;
     public Material BlackSun;
@@ -15,18 +15,12 @@ public class BlackSunMode : MonoBehaviour
    
     void Start()
     {
-        myMR = GetComponent<MeshRenderer>();
+        myMR = GetComponent<MeshRenderer>();                                    //making the meshRenderer actually grab the respective component
     }
 
-   
-    void Update()
+    public void SunChange(bool BSM)                                             //public function to make it accessible by the toggle button
     {
-        
-    }
-
-    public void SunChange(bool BSM)
-    {
-        if (BSM == true)
+        if (BSM == true)                                                        //if statement, saying that if the toggle is turned on, then show off dark mode, otherwise show the normal colourmode
         {
             myMR.material = BlackSun;
         }

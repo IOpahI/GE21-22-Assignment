@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RGB : MonoBehaviour
 {
+    //declaring materials to switch then when swapping colour modes
+
     public Material normalColour;
     public Material BrightColour;
     public static MeshRenderer myMR;
@@ -14,41 +16,34 @@ public class RGB : MonoBehaviour
     
     void Start()
     {
-        myMR = GetComponentInChildren<MeshRenderer>();
-        //normalColour.SetColor("normalColour", Color.HSVToRGB(colorval, 1, 1));
-
+        myMR = GetComponentInChildren<MeshRenderer>();                                  //making the meshRenderer in each childed cube actually grab the respective component
     }
 
     void Update()
     {
-        normalColour.color = Color.HSVToRGB(colorval, 1, 1);
-        colorval += Time.deltaTime * terrainGeneration.speed;
+        normalColour.color = Color.HSVToRGB(colorval, 1, 1);                            //setting a HSV value, to cycle through colour, since only the H value has to be changed, making cycling easier
+        colorval += Time.deltaTime * terrainGeneration.speed * 0.5f;                    //setting the colourvalue to change with time, as well as the speed at which the terrain is going (times 0.5 for a better feel
 
-        if (colorval >= 1)
+        if (colorval >= 1)                                                              //setting the H value to loop all the floats from 0-1
         {
             colorval = 0;
         }
 
         if (BSM == true)
         {
-            myMR = GetComponentInChildren<MeshRenderer>();
+            myMR = GetComponentInChildren<MeshRenderer>();                              //grabbing the meshRenderer in each child again to set it to a white colour if to toggle buttong for dark mode is set to true
             myMR.material = BrightColour;
-            Debug.Log("true");
         }
         else
         {
-            myMR = GetComponentInChildren<MeshRenderer>();
+            myMR = GetComponentInChildren<MeshRenderer>();                              //making sure the material on the instanciated cubes actually gets updated along with the H value that the material is holding
             myMR.material = normalColour;
-            Debug.Log(colorval);
         }
-
-
-
     }
 
     public void ColourChange()
     {
-        BSM = !BSM;
+        BSM = !BSM;                                                                     //setting a swap for the dark mode toggle
     }
 
 }

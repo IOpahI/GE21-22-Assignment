@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class terrainGeneration : MonoBehaviour
 {
 
-    // create values to use for math furtheron in the script
+    // create values to use for math further on in the script
     public int depth = 4;
     public int width = 256;
     public int length = 256;
@@ -15,27 +15,21 @@ public class terrainGeneration : MonoBehaviour
     public float xOffset = 100f;
     public float yOffset = 100f;
     public static float speed = 2.5f;
-    //AudioSource audioSource;
-    //private float[] audioSpec;
+
 
     void Start()
     {
-        /*
-        audioSpec = new float[128];
-        audioSource = GetComponent<AudioSource>();
-        */
-        xOffset = Random.Range(0f, 9999f);                  //offsets in order to randomize the map when launching and adding a movement effect
+        xOffset = Random.Range(0f, 9999f);                         //offsets in order to randomize the map when launching and adding a movement effect
         yOffset = Random.Range(0f, 9999f);
     }
 
     void Update()
     {
-        //audioSource.GetSpectrumData(audioSpec, 0, FFTWindow.Hamming);
 
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData); //taking value form the below terrain data that is being generated and passing into the current terrain
 
-        yOffset += Time.deltaTime * speed;                      //adding the "movement effect" of the project
+        yOffset += Time.deltaTime * speed;                          //adding the "movement effect" of the project
 
         
     }
@@ -43,9 +37,9 @@ public class terrainGeneration : MonoBehaviour
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
         terrainData.heightmapResolution = width * 1;                //adjusting the terrains heightmap to the be in order with the rest of the map
-        terrainData.size = new Vector3(width, depth, length);       
-        terrainData.SetHeights(0, 0, GenerateHeights());            
-        return terrainData;
+        terrainData.size = new Vector3(width, depth, length);       //setting terrain size
+        terrainData.SetHeights(0, 0, GenerateHeights());            //setting terrain height values -- with a bew function that generats these height values
+        return terrainData;                                         //returning terraindata values
     }
 
     float[,] GenerateHeights()                                      //using a float array, to fill the previous setHeights argument
@@ -59,7 +53,7 @@ public class terrainGeneration : MonoBehaviour
             }
         }
 
-        return heights;
+        return heights;                                             //return heights value
     }
 
     float CalculateHeight(int x, int y)                             //new float to calculate each coordinate
@@ -72,11 +66,11 @@ public class terrainGeneration : MonoBehaviour
 
     public void Scaling (float newScale)
     {
-        scale = newScale;
+        scale = newScale;                                           //setting terrain scale to match the slidebar value
     }
 
     public void SpeedChange (float newSpeed)
     {
-        speed = newSpeed;
+        speed = newSpeed;                                           //setting terrain speed to math slidebar value
     }
 }

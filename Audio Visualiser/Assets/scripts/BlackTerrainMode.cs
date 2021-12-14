@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlackTerrainMode : MonoBehaviour
 {
+    //declaring materials to switch then when swapping colour modes
 
     public Terrain terrain;
     public Material normalFloor;
@@ -11,17 +12,12 @@ public class BlackTerrainMode : MonoBehaviour
 
     void Start()
     {
-        terrain = GetComponent<Terrain>();
+        terrain = GetComponent<Terrain>();                                          //making the meshRenderer actually grab the respective component
     }
 
-    void Update()
+    public void FloorChange(bool DFM)                                               //public function to make it accessible by the toggle button
     {
-        
-    }
-
-    public void FloorChange(bool DFM)
-    {
-        if (DFM == true)
+        if (DFM == true)                                                            //if statement, saying that if the toggle is turned on, then show off dark mode, otherwise show the normal colourmode
         {
             terrain.materialTemplate = BlackFloor;
         }
